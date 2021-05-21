@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  font-family: "Play", sans-serif;
+}
+
+.h1,
+h2,
+.zen-dots {
+  font-family: "Zen Dots", cursive;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* ----- start nav -----  */
+nav {
+  height: 10vh;
+  /* background: #5b78c7; */
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  margin-left: auto;
+  position: fixed;
+  background-color: #00000080;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  clip-path: circle(100px at 110% -10%);
+  -webkit-clip-path: circle(100px at 110% -10%);
+  transition: all 1s ease-out;
+  pointer-events: none;
+  padding: 12rem 5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 5px;
+}
+
+.line-black {
+  width: 30px;
+  height: 3px;
+  background: rgb(0, 0, 0);
+  margin: 5px;
+}
+
+.hamburger {
+  position: absolute;
+  cursor: pointer;
+  right: 2%;
+  top: 5%;
+  transform: translate(-5%, -50%);
+  z-index: 10;
+}
+
+.nav-links.open {
+  clip-path: circle(1000px at 90% -10%);
+  -webkit-clip-path: circle(1000px at 90% -10%);
+  pointer-events: all;
+}
+
+.nav-links li a {
+  font-size: 25px;
+}
+/* ----- end nav -----  */
+
+.bg-home {
+  position: relative;
+  width: auto;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgb(0, 0, 0) 0%,
+      rgba(255, 255, 255, 0) 60%,
+      #000000 100%
+    ),
+    url("../img/sydney-3605032_1280.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  filter: grayscale(50%);
+}
+
+header nav a {
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  animation-name: title;
+  animation-duration: 2s;
+  animation-direction: normal;
+}
+
+/* ----- mouse animation ----- */
+.middle {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 4px solid #f2cfe0d0;
+  border-radius: 60px;
+}
+.mouse::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 10px;
+  background: #f2cfe0d3;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  opacity: 1;
+  animation: mouse 2s infinite;
+}
+
+.btn-ghost:hover,
+.btn-ghost-white:hover {
+  width: 400px;
+  animation-name: btn-ghost;
+  animation-duration: 2s;
+  animation-direction: normal;
+}
+
+.no-animation {
+  width: 18rem !important;
+  animation: none !important;
+}
+
+.bg-adviseert {
+  background-image: url(img/pexels-expect-best-323705.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+.bg-contact {
+  background-image: url(img/Projecten/pexels-pixabay-269077.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+/* ----- projects -----  */
+
+.project1 {
+  background-image: url(img/Projecten/pexels-binyamin-mellish-1500459.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project2 {
+  background-image: url(img/Projecten/pexels-expect-best-323780.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project3 {
+  background-image: url(img/Projecten/pexels-pixabay-256150.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project4 {
+  background-image: url(img/Projecten/pexels-pixabay-269077.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project5 {
+  background-image: url(img/Projecten/pexels-timur-saglambilek-87223.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project6 {
+  background-image: url(img/Projecten/pexels-yentl-jacobs-157811.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.active-project > a > div {
+  height: 20rem;
+}
+
+/* ----- dropdown menu -----  */
+
+.dropbtn {
+  background-color: #ffffff;
+  padding: 16px;
+  cursor: pointer;
+  outline: none !important;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 200px;
+
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 16px 24px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #f2cfe0;
+  color: #000000;
+}
+
+.show {
+  display: block;
+}
+
+.project-x-bg {
+  background-image: url(img/Projecten/pexels-pixabay-256150.jpg);
+  height: calc(100vh - 4rem);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.dark-overlay {
+  background-color: #00000080;
+  width: 100%;
+  height: calc(100vh - 4rem);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+/* ----- animations -----  */
+
+@keyframes title {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 15%;
+  }
+}
+
+@keyframes mouse {
+  from {
+    opacity: 1;
+    top: 10px;
+  }
+  to {
+    opacity: 0;
+    top: 25px;
+  }
+}
+
+@keyframes btn-ghost {
+  0% {
+    width: 18rem;
+  }
+  100% {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* ----- start nav -----  */
+  .nav-links {
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #5b78c7; */
+  }
+  /* ----- end nav -----  */
+
+  .bg-home {
+    /* position: relative; */
+
+    background-position: left;
+  }
+  .container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,40 @@
+/* ./your-css-folder/styles.css */
+@tailwind base;
+@tailwind components;
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  .border-3 {
+    border-width: 3px;
+  }
+  .width-5 {
+    width: 5%;
+  }
+  .width-30 {
+    width: 30%;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-2 border-2 border-primary hover:border-primary-2 uppercase text-sm py-1 px-3;
+  }
+
+  .btn-ghost {
+    @apply bg-none border-2 border-black uppercase text-sm py-1 px-3;
+  }
+
+  .btn-ghost-white {
+    @apply bg-none border-2 border-white uppercase text-sm text-white py-1 px-3;
+  }
+}
+
+@tailwind utilities;
